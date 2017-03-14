@@ -16,7 +16,7 @@ class Worldpay:
                                  headers=_generate_headers(cls.WORLDPAY_SERVICE_KEY))
 
         if response.status_code is HTTPStatus.OK.value:
-            return {'status_code': response.status_code, 'message':json.loads(response.text)["paymentStatus"], 'orderCode':json.loads(response.text)["orderCode"]}
+            return {'status_code': response.status_code, 'message':json.loads(response.text)["paymentStatus"], 'order_code':json.loads(response.text)["orderCode"]}
         else:
             return {'status_code': response.status_code, 'message':json.loads(response.text)["customCode"]}
 
